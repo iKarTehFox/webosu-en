@@ -1,4 +1,4 @@
-# osu!online (English translation)
+# osugame.online fork (English translation)
 
 A browser rhythm game where players click circles following rhythm of the music.
 
