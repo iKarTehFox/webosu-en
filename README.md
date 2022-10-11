@@ -10,7 +10,7 @@ Note: This is an unofficial implementation of [osu!](https://osu.ppy.sh). Scorin
 
 web page:
 
-![webpage](screenshots/page3.jpg)
+![webpage](screenshots/mainpage-screenshot_en.png)
 
 game in action:
 
