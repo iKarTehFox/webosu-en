@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta charset="utf-8" />
-        <title>戳泡泡</title>
+        <title>web osu! - Preview</title>
         <link rel="stylesheet" href="style/picnic.min.css">
         <link rel="stylesheet" type="text/css" href="style/main.css">
         <link rel="stylesheet" type="text/css" href="style/font.css">
@@ -34,22 +34,22 @@
 
         <nav id="main-nav">
             <div class="nav-link">
-                <a href="index.html" class="brand">Osaka Salmon University!</a>
-                <a href="new.html" class="pseudo button">最新</a>
-                <a href="hot.html" class="pseudo button">热门</a>
-                <a href="genre.html" class="pseudo button">分类</a>
+                <a href="index.html" class="brand">web osu!</a>
+                <a href="new.html" class="pseudo button">New</a>
+                <a href="hot.html" class="pseudo button">Popular</a>
+                <a href="genre.html" class="pseudo button active">Genres</a>
             </div>
             <div class="nav-search">
                 <form action="search.html">
-                    <input type="text" name="q" placeholder="谱面关键词或sid"/>
+                    <input type="text" name="q" placeholder="Beatmap name or Song ID"/>
                     <input type="image" class="search-button" src="research.svg">
                 </form>
             </div>
             <div class="nav-tool">
-                <a href="local.html" class="pseudo button">收藏夹</a>
-                <a href="faq.html" class="pseudo button">常见问题</a>
-                <a href="settings.html" class="pseudo button">设置</a>
-                <a onclick="document.documentElement.requestFullscreen();" class="pseudo button">进入全屏</a>
+                <a href="local.html" class="pseudo button">Favorites</a>
+                <a href="faq.html" class="pseudo button active">FAQ</a>
+                <a href="settings.html" class="pseudo button">Settings</a>
+                <a onclick="document.documentElement.requestFullscreen();" class="pseudo button">Fullscreen</a>
             </div>
         </nav>
 
@@ -57,11 +57,10 @@
             <div class="main-content">
                 <div class="beatmap-list" id="beatmap-list">
                     <!-- to be filled in script -->
-                    <h1 id="hint">谱面预览加载中</h1>
+					<h1 id="hint">Preview loading...</h1>
                 </div>
-                <div class="text">推荐使用最新版本 Firefox 或 Chrome.</div>
-                <div class="text">内测版v1.4.3. <a href="https://github.com/111116/osu">Github</a></div>
-                <div class="text">由<a href="https://osu.sayobot.cn/">Sayobot</a>提供谱面</div>
+                <div class="button" style="width:100%; margin-bottom: 10px;" id="btnmore">Load more</div>
+                <div class="text">The latest version of Chrome or Firefox is recommended.</div>
             </div>
             <!-- <div class="side-panel">
                 to be activated in script
@@ -133,10 +132,10 @@
                     }
                     wtf();
                     window.removeEventListener("click",f);
-                    document.getElementById("hint").innerText = "如果谱面预览未开始，可能谱包或数据有错。";
+                    document.getElementById("hint").innerText = "If the beatmap does not load, it might be corrupted.";
                 };
                 window.addEventListener("click",f);
-                document.getElementById("hint").innerText = "点击任意处以开始";
+                document.getElementById("hint").innerText = "Click anywhere to start";
             }
             xhr.onload = function() {
                 window.oszblob = new Blob([xhr.response]);
@@ -154,8 +153,8 @@
                 bar.value = e.loaded / e.total;
             }
             xhr.onerror = function() {
-                console.error("download failed");
-                alert("Beatmap download failed.")
+                console.error("Download failed!");
+                alert("Beatmap download failed!")
                 log_to_server("fail " + box.sid);
             }
             xhr.send();
@@ -166,14 +165,8 @@
                 // to make sure it's called only once
             }
         </script>
-        <!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-169262247-1"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-169262247-1');
 </script>
     </body>
 </html>
